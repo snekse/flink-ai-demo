@@ -7,7 +7,10 @@ Showing off the AI model capabilities available in Flink SQL on Confluent Cloud.
 Sorry, this README will be written from a MacOS perspective. 
 
 ## Confluent Cloud Account
-You can use your existing Confluent Cloud account if you know you have access to Flink, or you can [create a trial account with free credits](https://www.confluent.io/confluent-cloud/tryfree/).
+You can use your existing Confluent Cloud account if you know you have access to Flink, or you can [create a trial account with free credits](https://www.confluent.io/confluent-cloud/tryfree/). 
+
+If given the option to name your environment, we used `flink_ai_sandbox`. 
+Choosing the same name will make it easier to follow along. 
 
 ## Confluent CLI (v4.7+)
 In order to run these demos you'll need the Confluent CLI for the very first step or be good friends with the admin who has access to run the one needed command to establish the connection to the AI APIs you plan to use.
