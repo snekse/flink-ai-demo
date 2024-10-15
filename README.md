@@ -3,6 +3,35 @@ Showing off the AI model capabilities available in Flink SQL on Confluent Cloud.
 
 ---
 
+# TL;DR:
+
+Quickly interact with or train AI models in 3 easy steps with Flink AI
+
+### Step 1: Create your connection
+
+``` shell
+confluent flink connection create openai-connection \
+--cloud GCP \
+--region us-central1 \
+--type openai \
+--endpoint https://api.openai.com/v1/chat/completions \
+--api-key <your-api-key>
+```
+
+### Step 2: Create your Flink AI Model
+
+``` sql
+CREATE MODEL my_model WITH ('provider' = 'openai', 'model_id' = 'gpt-3')
+```
+
+### Step 3: Use the model
+
+``` sql
+SELECT ML_PREDICT(my_model, input) FROM my_stream
+```
+
+---
+
 # Establishing the Prerequisites
 Sorry, this README will be written from a MacOS perspective. 
 
@@ -208,7 +237,28 @@ SELECT ML_EVALUATE(`my_model$all`, f1, f2) FROM `eval_data`;
 `ML_EVALUATE` is a [new function](https://docs.confluent.io/cloud/current/flink/reference/functions/model-inference-functions.html#ml-evaluate) 
 that enables benchmarking of your models to see how they compare against your streaming datasets.
 
+---
 
+# Additional Reading
+
+### Flink AI: Real-Time ML and GenAI Enrichment of Streaming Data with Flink SQL on Confluent Cloud
+
+[https://www.confluent.io/blog/flinkai-realtime-ml-and-genai-confluent-cloud/](https://www.confluent.io/blog/flinkai-realtime-ml-and-genai-confluent-cloud/)
+> Invoking remote models is an important first step in enabling shift-left principles 
+> within the data streaming platform on Confluent Cloud. Flink on Confluent Cloud 
+> can easily rank, score, and rate event properties within data streams, 
+> resulting in clean data at the source. This is a fundamental principle while building 
+> modern data platforms and will greatly increase the value of information 
+> extracted from such platforms.
+
+### Let Flink Cook: Mastering Real-Time Retrieval-Augmented Generation (RAG) with Flink
+
+[https://www.confluent.io/blog/mastering-real-time-retrieval-augmented-generation-rag-with-flink/](https://www.confluent.io/blog/mastering-real-time-retrieval-augmented-generation-rag-with-flink/)
+> With AI model inference in Flink SQL, Confluent allows you to simplify the 
+> development and deployment of RAG-enabled GenAI applications by providing a unified platform 
+> for both data processing and AI tasks. By tapping into real-time, high-quality, 
+> and trustworthy data streams, you can augment the LLM with proprietary and domain-specific data 
+> using the RAG pattern and enable your LLM to deliver the most reliable, accurate responses.
 
 
 
