@@ -8,7 +8,7 @@ These examples require nothing other than
 
 # 📝 Instructions
 
-For each `.sql` file in this `simple-example` folder, create a "cell", 
+For each `.sql` file in this `EX-01-simple-example` folder, create a "cell", 
 paste the contents from the file to your workspace cell, 
 then [Run the SQL](https://docs.confluent.io/cloud/current/flink/get-started/quick-start-cloud-console.html#step-2-run-sql-statements).
 
