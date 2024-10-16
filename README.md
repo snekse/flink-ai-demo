@@ -237,6 +237,13 @@ SELECT ML_EVALUATE(`my_model$all`, f1, f2) FROM `eval_data`;
 `ML_EVALUATE` is a [new function](https://docs.confluent.io/cloud/current/flink/reference/functions/model-inference-functions.html#ml-evaluate) 
 that enables benchmarking of your models to see how they compare against your streaming datasets.
 
+### `FEDERATED_SEARCH`
+
+![federated_search_airline_example.png](assets%2Ffederated_search_airline_example.png)
+
+This diagram from the [Confluent blog](https://www.confluent.io/blog/mastering-real-time-retrieval-augmented-generation-rag-with-flink/) shows how `federated_search()` 
+will be used to retrive content from a vector store.
+
 ---
 
 # Additional Reading
